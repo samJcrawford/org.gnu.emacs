@@ -16,6 +16,18 @@ finish-args:
   - --filesystem=/var/tmp
   - --talk-name=org.freedesktop.Flatpak
 modules:
+  - name: toolbox
+    buildsystem: simple
+    build-commands:
+      - install -D toolbox-wrapper.sh /app/bin/toolbox
+  - name: distrobox
+    buildsystem: simple
+    build-commands:
+      - install -D distrobox-wrapper.sh /app/bin/distrobox
+  - name: podman
+    buildsystem: simple
+    build-commands:
+      - install -D podman-wrapper.sh /app/bin/podman
   - name: jansson
     buildsystem: autotools
     sources:
