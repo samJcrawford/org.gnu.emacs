@@ -212,8 +212,9 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "dir",
-                    "path": "wrapper"
+                    "type": "git",
+                    "url": "https://github.com/flathub-infra/ide-flatpak-wrapperin",
+		    "branch": "master"
                 },
                 {
                     "type": "file",
