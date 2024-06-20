@@ -3,9 +3,11 @@ runtime: org.freedesktop.Sdk
 runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
 command: emacs-wrapper
+
 rename-icon: emacs
 rename-appdata-file: emacs.metainfo.xml
 rename-desktop-file: emacs.desktop
+
 finish-args:
   - --share=network
   - --share=ipc
@@ -15,19 +17,21 @@ finish-args:
   - --filesystem=/tmp
   - --filesystem=/var/tmp
   - --talk-name=org.freedesktop.Flatpak
+
 modules:
-  - name: toolbox
+  - name: wrappers
     buildsystem: simple
     build-commands:
-      - install -D toolbox-wrapper.sh /app/bin/toolbox
-  - name: distrobox
-    buildsystem: simple
-    build-commands:
-      - install -D distrobox-wrapper.sh /app/bin/distrobox
-  - name: podman
-    buildsystem: simple
-    build-commands:
-      - install -D podman-wrapper.sh /app/bin/podman
+      - install -D /app/bin/toolbox
+      - install -D /app/bin/distrobox
+      - install -D /app/bin/podman
+    sources:
+      - type: file
+        path: toolbox-wrapper.sh
+      - type: file
+        path: distrobox-wrapper.sh
+      - type: file
+        path: podman-wrapper.sh
   - name: jansson
     buildsystem: autotools
     sources:
