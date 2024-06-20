@@ -148,6 +148,8 @@ modules:
         path: metainfo-screenshot-size.patch
       - type: patch
         path: metainfo-caption-point.patch
+      - type: patch
+        path: tramp-connection.patch
     cleanup:
       - /share/icons/hicolor/scalable/apps/emacs.ico
       - /share/icons/hicolor/scalable/mimetypes/emacs-document.svg
