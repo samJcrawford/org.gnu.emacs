@@ -22,9 +22,9 @@ modules:
   - name: wrappers
     buildsystem: simple
     build-commands:
-      - install -D /app/bin/toolbox
-      - install -D /app/bin/distrobox
-      - install -D /app/bin/podman
+      - install -D toolbox-wrapper.sh /app/bin/toolbox
+      - install -D distrobox-wrapper.sh /app/bin/distrobox
+      - install -D podman-wrapper.sh /app/bin/podman
     sources:
       - type: file
         path: toolbox-wrapper.sh
