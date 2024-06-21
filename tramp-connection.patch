@@ -1,17 +1,8 @@
-From 893ed098a6d1256c6e11c8e81e923d94c3e30656 Mon Sep 17 00:00:00 2001
-From: Sam Crawford <sam@crawf.uk>
-Date: Thu, 20 Jun 2024 16:53:51 +0100
-Subject: [PATCH] Use shorter socket filename in tramp
-
----
- lisp/net/tramp-sh.el | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
-
 diff --git a/lisp/net/tramp-sh.el b/lisp/net/tramp-sh.el
-index b79b55ee2cc..a7a6d88d46b 100644
+index bce7c323dad..4638e94f842 100644
 --- a/lisp/net/tramp-sh.el
 +++ b/lisp/net/tramp-sh.el
-@@ -5055,15 +5055,8 @@ tramp-ssh-controlmaster-options
+@@ -4930,11 +4930,5 @@ tramp-ssh-controlmaster-options
             ;; Hashed tokens are introduced in OpenSSH 6.7.  On macOS
             ;; we cannot use an absolute file name, it is too long.
             ;; See Bug#19702.
@@ -28,5 +19,3 @@ index b79b55ee2cc..a7a6d88d46b 100644
 
           ;; ControlPersist option is introduced in OpenSSH 5.6.
  	 (when (and (not (eq tramp-use-connection-share 'suppress))
---
-2.44.0
