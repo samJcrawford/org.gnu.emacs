@@ -2,7 +2,7 @@ diff --git a/lisp/net/tramp-sh.el b/lisp/net/tramp-sh.el
 index bce7c323dad..4638e94f842 100644
 --- a/lisp/net/tramp-sh.el
 +++ b/lisp/net/tramp-sh.el
-@@ -4930,11 +4930,5 @@ tramp-ssh-controlmaster-options
+@@ -4930,14 +4930,8 @@ tramp-ssh-controlmaster-options
             ;; Hashed tokens are introduced in OpenSSH 6.7.  On macOS
             ;; we cannot use an absolute file name, it is too long.
             ;; See Bug#19702.
@@ -16,6 +16,6 @@ index bce7c323dad..4638e94f842 100644
 -		  tramp-compat-temporary-file-directory))))
 +	   (if (tramp-ssh-option-exists-p vec "ControlPath=tramp.%C")
 +		   "tramp.%%C" "tramp.%%r@%%h:%%p"))
-
+ 
           ;; ControlPersist option is introduced in OpenSSH 5.6.
  	 (when (and (not (eq tramp-use-connection-share 'suppress))
